@@ -27,8 +27,6 @@ class PseudoSerial:
         self.last_command = ""
 
         self.auth = AuthenticationManager() #incorporate authentication manager test system
-        self.firmware = FirmwareManager() #incorporate firmware manager test system
-
 
         #simulate bad connection (50% chance of bad connection)
         connectionChance = random.randint(0,1)
