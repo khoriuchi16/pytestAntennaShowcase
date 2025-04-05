@@ -1,5 +1,5 @@
 # pytestAntennaShowcase
-Repository to showcase pytest's ability automate hardware-in-the-loop testing for a hypothetical antenna system
+Repository to showcase pytest's ability automate testing for a hypothetical antenna system
 
 
 ## Download dependencies
