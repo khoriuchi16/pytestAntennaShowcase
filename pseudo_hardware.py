@@ -96,7 +96,7 @@ class PseudoSerial:
         if connectionChance == 1:
             self.status = True
         else:
-            self.status = False
+            self.status = True #set to False to give 50% chance of bad connection
 
 
     def checkConnection(self):
