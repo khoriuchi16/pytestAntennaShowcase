@@ -1,19 +1,19 @@
 #Test suite of hypothetical antenna system to verify satisfaction of functional requirements
 import time
 
-def test_connection(connection_interface):
+def test_serial_connection(connection_interface):
 
-    #Verify that connection is made
+    #Verify that serial connection is made
     connected = connection_interface.checkConnection()
-    assert connected == True, f"No wireless connection found, stopping test suite"
-    print("\nwireless connection found, proceeding to next test cases...")
+    assert connected == True, f"No serial connection found, stopping test suite"
+    print("\nSerial connection found, proceeding to next test cases...")
 
 
 def test_ota_authentication(connection_interface):
     
-    #Verify that connection was prior made
+    #Verify that serial connection was prior made
     connected = connection_interface.checkConnection()
-    assert connected == True, f"No wireless connection found, test cannot proceed"
+    assert connected == True, f"No serial connection found, test cannot proceed"
 
     print("\n[TEST] OTA authentication...")
     connection_interface.write(b'OTA_AUTH admin pass123\n')
@@ -25,9 +25,9 @@ def test_ota_authentication(connection_interface):
 
 def test_ota_authentication_FAIL(connection_interface):
 
-    #Verify that connection was prior made
+    #Verify that serial connection was prior made
     connected = connection_interface.checkConnection()
-    assert connected == True, f"No wireless connection found, test cannot proceed"
+    assert connected == True, f"No serial connection found, test cannot proceed"
     
     print("\n[TEST] OTA authentication...")
     connection_interface.write(b'OTA_AUTH admin WRONGPASS\n')
