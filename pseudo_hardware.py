@@ -1,5 +1,5 @@
 #Simulate real-time simulator for hardware-in-the-loop testing
-#Allows for mock serial connection to be established
+#Allows for mock connection to be established
 #Simulates necessary test systems for test suite (i.e. firmware manager, authentication manager, log manager, beam steering system)
 
 import time
@@ -19,8 +19,8 @@ class AuthenticationManager:
         
 
 
-#Mock serial class for creating hardware interface
-class PseudoSerial:
+#Mock connection class for creating hardware interface
+class PseudoConnection:
     def __init__(self, port, baudrate, timeout):
         
         self.buffer = io.StringIO()
@@ -40,7 +40,7 @@ class PseudoSerial:
         if self.status == True:
             return True
         else:
-            return False, "FAILED SERIAL CONNECTION"
+            return False, "FAILED WIRELESS CONNECTION"
 
 
     def write(self, command_bytes):
